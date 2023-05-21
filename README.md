@@ -3,6 +3,11 @@
 
 Welcome to LightBnb! This is a simple multi-page application that serves as a clone of Airbnb. LightBnb utilizes server-side JavaScript and SQL queries to retrieve and display information on web pages.
 
+## App Views
+
+![ERD](https://github.com/x-saim/LightBnB/blob/master/ERD/LightBnb_ERD.png?raw=true)
+
+
 ## Dependencies
 The LightBnb project has the following dependencies:
 
