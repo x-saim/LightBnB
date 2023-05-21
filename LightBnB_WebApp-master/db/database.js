@@ -214,7 +214,7 @@ const getAllProperties = (options, limit = 10) => {
  */
 
 const addProperty = function(property) {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     
     //add the new property to the properties table.
     const queryStr = `
@@ -257,15 +257,15 @@ const addProperty = function(property) {
     ];
 
     pool
-    .query(queryStr,queryParams)
-    .then(results => {
-      resolve(results.rows)
-    })
-    .catch(error => resolve(error));
+      .query(queryStr,queryParams)
+      .then(results => {
+        resolve(results.rows);
+      })
+      .catch(error => resolve(error));
 
-  })
+  });
 
-}
+};
 
 module.exports = {
   getUserWithEmail,
