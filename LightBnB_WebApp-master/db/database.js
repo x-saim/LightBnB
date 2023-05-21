@@ -59,8 +59,21 @@ const getUserWithEmail = function (email) {
  * @return {Promise<{}>} A promise to the user.
  */
 const getUserWithId = function (id) {
-  return Promise.resolve(users[id]);
-};
+  return new Promise((resolve, reject) => {
+    const queryParams = [id];
+    let queryStr = `
+      SELECT *
+      FROM users
+      WHERE id = $1;
+      `;
+
+      pool.query(queryStr,queryParams)
+      .then((result) => { 
+        resolve(result.rows[0]);
+      })
+      .catch(error => reject(error));
+  })
+}
 
 /**
  * Add a new user to the database.
