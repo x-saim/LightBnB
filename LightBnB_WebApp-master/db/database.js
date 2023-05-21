@@ -27,8 +27,9 @@ const getUserWithEmail = function(email) {
       WHERE email = $1;
       `;
 
-    pool.query(queryStr,queryParams)
-      .then(result => {
+    pool
+    .query(queryStr,queryParams)
+    .then(result => {
         let user = result.rows[0];
         if (user.email.toLowerCase() === email.toLowerCase()) {
           resolve(user);
@@ -57,8 +58,9 @@ const getUserWithId = function(id) {
       WHERE id = $1;
       `;
 
-    pool.query(queryStr,queryParams)
-      .then((result) => {
+    pool
+    .query(queryStr,queryParams)
+    .then((result) => {
         let user = result.rows[0];
         if (user.id === id) {
           resolve(user);
@@ -76,12 +78,28 @@ const getUserWithId = function(id) {
  * @param {{name: string, password: string, email: string}} user
  * @return {Promise<{}>} A promise to the user.
  */
+// const addUser = function(user) {
+//   const userId = Object.keys(users).length + 1;
+//   user.id = userId;
+//   users[userId] = user;
+//   return Promise.resolve(user);
+// };
+
+
 const addUser = function(user) {
-  const userId = Object.keys(users).length + 1;
-  user.id = userId;
-  users[userId] = user;
-  return Promise.resolve(user);
-};
+  return new Promise((resolve, reject) => {
+    const queryParams = [user.name, user.email, user.password];
+    let queryStr = `INSERT INTO users (name, email, password)
+    VALUES ($1, $2, $3) RETURNING *;`;
+
+    pool
+    .query(queryStr,queryParams)
+    .then(result => {
+      resolve(result.rows[0]);
+    })
+    .catch(error => reject(error));
+  })
+}
 
 /// Reservations
 
