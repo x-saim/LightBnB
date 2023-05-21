@@ -1,6 +1,15 @@
 const properties = require("./json/properties.json");
 const users = require("./json/users.json");
 
+//Connect to the lightbnb database using PostgreSQL
+const { Pool } = require('pg');
+const pool = new Pool({
+  user: 'vagrant',
+  password: '123',
+  host: 'localhost',
+  database: 'bootcampx'
+});
+
 /// Users
 
 /**
