@@ -5,7 +5,14 @@ Welcome to LightBnb! This is a simple multi-page application that serves as a cl
 
 ## App Views
 
-![ERD](https://github.com/x-saim/LightBnB/blob/master/ERD/LightBnb_ERD.png?raw=true)
+### Entity Relationship Diagram
+![ERD](https://github.com/x-saim/LightBnB/blob/master/docs/LightBnb_ERD.png?raw=true)
+
+### Reservations View
+![Reservations](https://github.com/x-saim/LightBnB/blob/master/docs/Create_listing.png?raw=true)
+
+### Search Form
+![Create Listing](https://github.com/x-saim/LightBnB/blob/master/docs/Search_form.png?raw=true)
 
 
 ## Dependencies
