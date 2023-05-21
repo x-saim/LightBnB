@@ -147,7 +147,7 @@ const getAllProperties = (options, limit = 10) => {
   }
 
   if (options.owner_id) {
-    queryParams.push(options.owner_id);
+    queryParams.push(`${options.owner_id}`);
     if (queryParams.length === 1) {
       queryStr += 'WHERE ';
     } else {
