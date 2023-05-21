@@ -10,11 +10,6 @@ const pool = new Pool({
   database: 'lightbnb'
 });
 
-// the following assumes that you named your connection variable `pool`
-pool.query(`SELECT title FROM properties LIMIT 10;`)
-.then(response => {console.log(response)})
-.catch(err => console.error('query error', err.stack));
-
 /// Users
 
 /**
