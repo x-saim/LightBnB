@@ -35,14 +35,23 @@ This will create the necessary tables and set up the schema for the LightBnB app
 
 #### Seeds & Data
 
-1. The repo contains preloaded seed files that include sample data. Run the seed files by inputting the following command in your CLI: `\i seeds/01_seeds.sql` and `\i seeds/02_seeds.sql`.
+1. The repo contains preloaded seed files that include sample data. Run the seed files by inputting the following command in your CLI: `\i seeds/01_seeds.sql` and `\i seeds/02_seeds.sql`. These commands will only work if you are in the cloned repo directory `/Lightbnb`.
 
 ### Running the Server
 
-1. Change the directory to the LightBnB_WebApp-master folder. Make sure to replace LightBnB_WebApp-master with the correct directory name if it differs in your project.
-2. Start the server by running the following command in the command line interface (CLI): `npm run local`
+1. Download the project from https://github.com/lighthouse-labs/LightBnB_WebApp.
+
+Once the project has downloaded:
+- Extract and drag the extracted LightBnB_WebApp folder into your lightbnb folder.
+- `cd` into the LightBnB_WebApp directory.
+- Install any dependencies with `npm i`.
+
+2. Change the directory to the LightBnB_WebApp-master folder. Make sure to replace LightBnB_WebApp-master with the correct directory name if it differs in your project.
+3. Start the server by running the following command in the command line interface (CLI): `npm run local`
 
 This will start the LightBnB server and make the application accessible through your browser at http://localhost:3000/.
+
+* Note: You may need to have npx installed first. `npm install -g npx`
 
 ## Dependencies
 The LightBnb project has the following dependencies:

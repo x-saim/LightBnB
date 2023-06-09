@@ -157,7 +157,7 @@ const getAllProperties = (options, limit = 10) => {
   }
   
   if (options.minimum_price_per_night) {
-    queryParams.push(`${options.minimum_price_per_night}`);
+    queryParams.push(`${options.minimum_price_per_night * 100}`);
     if (queryParams.length >= 1) {
       queryStr += 'AND ';
     } else {
@@ -167,7 +167,7 @@ const getAllProperties = (options, limit = 10) => {
   }
   
   if (options.maximum_price_per_night) {
-    queryParams.push(`${options.maximum_price_per_night}`);
+    queryParams.push(`${options.maximum_price_per_night * 100}`);
     if (queryParams.length >= 1) {
       queryStr += 'AND ';
     } else {
