@@ -137,7 +137,7 @@ const getAllProperties = (options, limit = 10) => {
   let queryStr = `
   SELECT properties.*, AVG(property_reviews.rating) AS average_rating
   FROM properties 
-  JOIN property_reviews ON properties.id = property_id
+  JOIN property_reviews ON properties.id = property_reviews.property_id
   `;
 
   // Set up of query statements based on property values passed into options object as filters.
@@ -156,6 +156,7 @@ const getAllProperties = (options, limit = 10) => {
     queryStr += `owner_id = $${queryParams.length}`;
   }
   
+  // Minimum price per night filter, converting user inputted dollars to cents.
   if (options.minimum_price_per_night) {
     queryParams.push(`${options.minimum_price_per_night * 100}`);
     if (queryParams.length >= 1) {
@@ -166,6 +167,7 @@ const getAllProperties = (options, limit = 10) => {
     queryStr += `cost_per_night >= $${queryParams.length}`;
   }
   
+  // Maximum price per night filter, converting user inputted dollars to cents.
   if (options.maximum_price_per_night) {
     queryParams.push(`${options.maximum_price_per_night * 100}`);
     if (queryParams.length >= 1) {
@@ -176,30 +178,29 @@ const getAllProperties = (options, limit = 10) => {
     queryStr += `cost_per_night <= $${queryParams.length}`;
   }
   
-  if (options.minimum_rating) {
-    queryParams.push(`${options.minimum_rating}`);
-    if (queryParams.length >= 1) {
-      queryStr += 'AND ';
-    } else {
-      queryStr += 'WHERE ';
-    }
-    queryStr += `rating >= $${queryParams.length}`;
-  }
-  
-  
-  queryParams.push(limit);
   queryStr += `
   GROUP BY properties.id
+  `;
+
+  // Minimum AVG rating filter.
+  if (options.minimum_rating) {
+    queryParams.push(`${options.minimum_rating}`);
+    queryStr += `
+    HAVING AVG(property_reviews.rating) >= $${queryParams.length}`;
+  }
+
+  // Limiting amount of listings.
+  queryParams.push(limit);
+  console.log(limit);
+  queryStr += `
   ORDER BY cost_per_night
   LIMIT $${queryParams.length};
   `;
-
   console.log(queryStr, queryParams);
 
   return pool
     .query(queryStr,queryParams)
     .then((result) => {
-      console.log(result.rows);
       return result.rows;
     })
     .catch((err) => {
