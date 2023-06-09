@@ -191,12 +191,10 @@ const getAllProperties = (options, limit = 10) => {
 
   // Limiting amount of listings.
   queryParams.push(limit);
-  console.log(limit);
   queryStr += `
   ORDER BY cost_per_night
   LIMIT $${queryParams.length};
   `;
-  console.log(queryStr, queryParams);
 
   return pool
     .query(queryStr,queryParams)
