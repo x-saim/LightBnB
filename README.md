@@ -16,7 +16,25 @@ Welcome to LightBnb! This is a simple multi-page application that serves as a cl
 
 ## Getting Started
 
+### Prerequisites
+- Make sure you have Postgres SQL installed on your system.
+- Start the Postgres SQL server by running the command `startpostgres`.
 
+### Database Setup
+1. Connect to the lightbnb database by using the command \c lightbnb in your Postgres SQL client.
+2. Inject the database queries by executing the following commands:
+
+- `\i migrations/01_schema.sql`
+- `\i migrations/02_schema.sql`
+
+This will create the necessary tables and set up the schema for the LightBnB application.
+
+### Running the Server
+
+1. Change the directory to the LightBnB_WebApp-master folder. Make sure to replace LightBnB_WebApp-master with the correct directory name if it differs in your project.
+2. Start the server by running the following command in the command line interface (CLI): `npm run local`
+
+This will start the LightBnB server and make the application accessible through your browser at http://localhost:3000/.
 
 ## Dependencies
 The LightBnb project has the following dependencies:
