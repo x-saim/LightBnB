@@ -18,16 +18,24 @@ Welcome to LightBnb! This is a simple multi-page application that serves as a cl
 
 ### Prerequisites
 - Make sure you have Postgres SQL installed on your system.
-- Start the Postgres SQL server by running the command `startpostgres`.
+- Start the Postgres SQL server by running the command `startpostgres` and `psql`.
 
 ### Database Setup
-1. Connect to the lightbnb database by using the command \c lightbnb in your Postgres SQL client.
+
+#### Migrations
+1. Connect to the lightbnb database by using the command `\c` lightbnb in your Postgres SQL client: `\c lightbnb`
 2. Inject the database queries by executing the following commands:
 
 - `\i migrations/01_schema.sql`
 - `\i migrations/02_schema.sql`
 
 This will create the necessary tables and set up the schema for the LightBnB application.
+
+3. Before moving on, make sure all of the tables exist in the database by typing `\dt` at the psql prompt.
+
+#### Seeds & Data
+
+1. The repo contains preloaded seed files that include sample data. Run the seed files by inputting the following command in your CLI: `\i seeds/01_seeds.sql` and `\i seeds/02_seeds.sql`.
 
 ### Running the Server
 
