@@ -3,6 +3,26 @@
 
 Welcome to LightBnb! This is a simple multi-page application that serves as a clone of Airbnb. LightBnb utilizes server-side JavaScript and SQL queries to retrieve and display information on web pages.
 
+## App Use
+
+This app provides functionality related to property rentals and reservations. It consists of the following pages:
+
+* Search: This page allows users to search for available properties based on various filters such as city, price range, and minimum rating. Users can enter their search criteria and view a list of matching properties.
+
+* Create Listing: This page enables property owners to create new listings for their properties. Owners can enter details about the property, such as title, description, location, pricing, and amenities. After submitting the listing, it becomes available for users to search and book.
+
+* My Listings: This page displays a list of properties owned by the currently logged-in user. Owners can manage their listings, including editing property details, updating availability, and removing listings if needed.
+
+* My Reservations: This page provides a summary of reservations made by the currently logged-in user. Users can view details of each reservation, including the property, reservation dates, and any associated ratings or reviews.
+
+* Log In: The Log In page is where users can authenticate themselves by logging into their existing accounts. 
+
+* Sign Up: The Sign Up page allows new users to create an account and join the app's community.
+
+* Log Out: This functionality allows users to securely log out of the application, terminating their session and ensuring their privacy.
+
+Overall, this app facilitates property searching, listing creation, and reservation management for both property owners and users interested in renting properties.
+
 ## App Views
 
 ### Entity Relationship Diagram
