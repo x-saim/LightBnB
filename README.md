@@ -14,6 +14,9 @@ Welcome to LightBnb! This is a simple multi-page application that serves as a cl
 ### Search Form
 ![Create Listing](https://github.com/x-saim/LightBnB/blob/master/docs/Search_form.png?raw=true)
 
+## Getting Started
+
+
 
 ## Dependencies
 The LightBnb project has the following dependencies:
