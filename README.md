@@ -24,7 +24,7 @@ Welcome to LightBnb! This is a simple multi-page application that serves as a cl
 
 #### Migrations
 1. Connect to the lightbnb database by using the command `\c` lightbnb in your Postgres SQL client: `\c lightbnb`
-2. Inject the database queries by executing the following commands:
+2. Inject the database queries to create tables in the database by executing the following commands:
 
 - `\i migrations/01_schema.sql`
 - `\i migrations/02_schema.sql`
@@ -35,11 +35,11 @@ This will create the necessary tables and set up the schema for the LightBnB app
 
 #### Seeds & Data
 
-1. The repo contains preloaded seed files that include sample data. Run the seed files by inputting the following command in your CLI: `\i seeds/01_seeds.sql` and `\i seeds/02_seeds.sql`. These commands will only work if you are in the cloned repo directory `/Lightbnb`.
+1. The repo contains preloaded seed files that include sample data. Run the seed files by inputting the following command in your CLI: `\i seeds/01_seeds.sql` and `\i seeds/02_seeds.sql`.
 
 ### Running the Server
 
-1. Download the project from https://github.com/lighthouse-labs/LightBnB_WebApp.
+1. Download the project zip file from https://github.com/lighthouse-labs/LightBnB_WebApp.
 
 Once the project has downloaded:
 - Extract and drag the extracted LightBnB_WebApp folder into your lightbnb folder.
